@@ -1,44 +1,60 @@
 # Toxic Comment Classification
-Multi-Label Text Classification Project for Detecting Online Toxicity
 
-Binary Classification ｜ Text Feature Engineering ｜ Multi-Label Imbalanced Data ｜ SHAP Interpretability ｜ NLP Pipeline
+Multi-label NLP project for detecting toxic comments in online platforms.
+
+**Multi-Label Classification | Text Preprocessing | TF-IDF | One-vs-Rest Logistic Regression | SHAP Interpretability**
+
+---
 
 ## Project Overview
-This project is based on the **Jigsaw Toxic Comment Classification** dataset from Kaggle.
 
-The goal is to predict the probability that a given online comment belongs to one or more toxicity categories:  
-`toxic`, `severe_toxic`, `obscene`, `threat`, `insult`, `identity_hate`.  
+This project addresses the problem of identifying various types of toxic comments (toxic, severe_toxic, obscene, threat, insult, identity_hate) in online discussions. The goal is to predict the probability that a given comment falls into each toxic category, enabling automated moderation and safer online communities.
 
-The model outputs a probability score for each category, enabling platforms to flag or moderate harmful comments proactively, while retaining safe speech.
+The dataset is derived from Wikipedia talk page edits and is publicly available via Kaggle.
 
-## Technical Workflow
-- **Data preprocessing:** text cleaning, punctuation removal, tokenization, lemmatization, stopword filtering  
-- **Feature engineering:** TF-IDF vectorization (uni-grams), n-gram representation  
-- **Model training:** One-vs-Rest Logistic Regression on multi-label targets  
-- **Model evaluation:** ROC-AUC, F1-score, recall per label  
-- **Model interpretability:** SHAP-based feature analysis for text insights
+The pipeline uses:
+
+- Text preprocessing (tokenization, lemmatization, lowercasing, removing punctuation and short tokens)
+- TF-IDF vectorization
+- One-vs-Rest Logistic Regression for multi-label classification
+- Cross-validation for performance evaluation
+- SHAP-based interpretability to explain model predictions
+
+---
 
 ## Key Results
-- The final model (One-vs-Rest Logistic Regression) achieves strong per-label ROC-AUC on validation data  
-- SHAP analysis shows which words contribute most to different types of toxicity  
-- Probabilistic outputs allow flexible thresholds for moderation policies
+
+- Multi-label One-vs-Rest Logistic Regression achieves strong predictive performance
+- SHAP analysis highlights the most important words driving toxic behavior
+- The pipeline is modular and reusable for new datasets or production deployment
+
+---
 
 ## Dataset
+
 Kaggle Competition:  
 [Toxic Comment Classification Challenge](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge)
 
-**Disclaimer:** The dataset contains offensive language, including profanity and identity-based attacks.
+---
 
 ## Example Usage
+
 ```python
 from pipeline import build_pipeline
 
+# Build pipeline
 pipeline = build_pipeline()
+
+# Fit on training data
 pipeline.fit(X_train, y_train)
+
+# Predict probabilities on test data
 y_pred = pipeline.predict_proba(X_test)
 
-Tableau Dashboard (Optional)
+
+## Tableau Dashboard (Optional)
 
 Interactive dashboards can translate prediction outputs into moderation insights:
+
 🔗 Live Dashboard (Tableau Public)
-https://public.tableau.com/
+点击访问
