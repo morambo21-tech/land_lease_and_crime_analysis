@@ -37,20 +37,6 @@ Kaggle Competition:
 
 ---
 
-## Example Usage
-
-```python
-from pipeline import build_pipeline
-
-# Build pipeline
-pipeline = build_pipeline()
-
-# Fit on training data
-pipeline.fit(X_train, y_train)
-
-# Predict probabilities on test data
-y_pred = pipeline.predict_proba(X_test)
-
 
 ## Tableau Dashboard (Optional)
 
