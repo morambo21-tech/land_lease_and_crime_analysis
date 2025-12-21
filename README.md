@@ -1,46 +1,44 @@
-Toxic Comment Classification
+# Toxic Comment Classification
+Multi-Label Text Classification Project for Detecting Online Toxicity
 
-Machine Learning Project for Online Toxicity Risk Detection
+Binary Classification ｜ Text Feature Engineering ｜ Multi-Label Imbalanced Data ｜ SHAP Interpretability ｜ NLP Pipeline
 
-Multi-Label Classification ｜ NLP ｜ Imbalanced Data ｜ Interpretability-Ready ｜ Text Mining
+## Project Overview
+This project is based on the **Jigsaw Toxic Comment Classification** dataset from Kaggle.
 
-Project Overview
+The goal is to predict the probability that a given online comment belongs to one or more toxicity categories:  
+`toxic`, `severe_toxic`, `obscene`, `threat`, `insult`, `identity_hate`.  
 
-This project is based on the Kaggle Toxic Comment Classification Challenge.
+The model outputs a probability score for each category, enabling platforms to flag or moderate harmful comments proactively, while retaining safe speech.
 
-The objective is to identify and quantify different types of toxic behavior in online comments using text data collected from Wikipedia discussion pages.
+## Technical Workflow
+- **Data preprocessing:** text cleaning, punctuation removal, tokenization, lemmatization, stopword filtering  
+- **Feature engineering:** TF-IDF vectorization (uni-grams), n-gram representation  
+- **Model training:** One-vs-Rest Logistic Regression on multi-label targets  
+- **Model evaluation:** ROC-AUC, F1-score, recall per label  
+- **Model interpretability:** SHAP-based feature analysis for text insights
 
-The model outputs a probability score for each toxicity category, which can be interpreted as a content risk indicator to support moderation, filtering, and community safety efforts.
+## Key Results
+- The final model (One-vs-Rest Logistic Regression) achieves strong per-label ROC-AUC on validation data  
+- SHAP analysis shows which words contribute most to different types of toxicity  
+- Probabilistic outputs allow flexible thresholds for moderation policies
 
-Technical Workflow
+## Dataset
+Kaggle Competition:  
+[Toxic Comment Classification Challenge](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge)
 
-Text preprocessing: normalization, tokenization, lemmatization
+**Disclaimer:** The dataset contains offensive language, including profanity and identity-based attacks.
 
-Feature extraction: TF-IDF representation of comment text
+## Example Usage
+```python
+from pipeline import build_pipeline
 
-Model training: One-vs-Rest Logistic Regression for multi-label classification
+pipeline = build_pipeline()
+pipeline.fit(X_train, y_train)
+y_pred = pipeline.predict_proba(X_test)
 
-Model evaluation: ROC-AUC with cross-validation
+Tableau Dashboard (Optional)
 
-Pipeline design: end-to-end scikit-learn pipeline for reproducibility and clean inference
-
-Key Results
-
-The final model achieves stable ROC-AUC performance across multiple toxicity labels
-
-Linear models with TF-IDF features provide strong baseline accuracy and robustness
-
-Probability outputs enable flexible thresholding for different moderation policies
-
-Dataset
-
-Kaggle Competition:
-https://www.kaggle.com/competitions/jigsaw-toxic-comment-classification-challenge
-
-Practical Applications
-
-Automated content moderation
-
-Early detection of abusive or harmful discussions
-
-Customizable toxicity filtering based on platform policy
+Interactive dashboards can translate prediction outputs into moderation insights:
+🔗 Live Dashboard (Tableau Public)
+https://public.tableau.com/
