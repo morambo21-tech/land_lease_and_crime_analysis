@@ -37,10 +37,9 @@ Kaggle Competition:
 
 ---
 
+## Tableau Dashboard
 
-## Tableau Dashboard (Optional)
+Interactive dashboards translate prediction outputs into moderation insights.  
+You can explore metrics such as overall toxic comment proportion, risk level distribution, toxic type distribution, and model performance interactively.
 
-Interactive dashboards can translate prediction outputs into moderation insights:
-
-🔗 Live Dashboard (Tableau Public)
-点击访问
+🔗 [Click to view the Tableau Dashboard](https://public.tableau.com/app/profile/sisi.li4602/viz/toxic_comment/1)
