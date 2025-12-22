@@ -44,7 +44,7 @@ Below is a static preview of the interactive Tableau Dashboard:
 ![Toxic Comment Dashboard Screenshot](images/toxic_dashboard.png)
 
 You can explore the live dashboard here:  
-🔗 [Click to view the Tableau Dashboard]([https://public.tableau.com/app/profile/sisi.li4602/viz/toxic_comment/1](https://public.tableau.com/app/profile/sisi.li4602/viz/toxic_comment/1))
+🔗 [Click to view the Tableau Dashboard]([(https://public.tableau.com/app/profile/sisi.li4602/viz/toxic_comment/1)])
 
 The dashboard provides insights such as:
 
