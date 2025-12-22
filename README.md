@@ -49,7 +49,6 @@ You can explore the live dashboard here:
 The dashboard provides insights such as:
 
 - Overall toxic comment proportion
-- Risk level distribution
 - Toxic type distribution
 - Model performance and prediction probabilities
 
